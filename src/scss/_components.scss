@@ -1,0 +1,36 @@
+.errorFormMessage {
+  color: rgb(231, 18, 18);
+}
+
+.successFormMessage {
+  color: rgb(3, 169, 11);
+}
+
+.spinner {
+  animation: spin 0.4s linear infinite;
+}
+
+.greenTableBtn,
+.blueTableBtn,
+.redTableButton,
+.orangeTableBtn {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  color: #fff;
+}
+.greenTableBtn {
+  background-color: rgba(0, 181, 0, 1);
+}
+
+.blueTableBtn {
+  background-color: $c-primary-blue;
+}
+
+.orangeTableBtn {
+  background-color: rgb(255, 85, 0);
+}
+
+.redTableButton {
+  background-color: red;
+}

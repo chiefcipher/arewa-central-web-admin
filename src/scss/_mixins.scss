@@ -1,0 +1,11 @@
+@mixin respondTo($type, $breakpoint) {
+  @if ($type == "max") {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}

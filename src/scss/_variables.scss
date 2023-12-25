@@ -1,0 +1,43 @@
+// colors
+$f-inter: "Inter", sans-serif;
+$c-primary-blue: #1565d8;
+$c-darker-blue: #1a82e2; //  A slightly lighter shade of blue for accents.
+$c-darkest-blue: #0d3f7a; // - A darker blue for depth and contrast.
+$c-vibrant-orange: #ffa500; //- A vibrant orange for attention-grabbing elements.
+$c-muted-green: #66bb6a; // - A muted green for a natural and calming touch.
+$c-bright-pink: #ff4081; //- A bright pink for a pop of color and contrast.
+$c-warm-yellow: #ffd700; // - A warm yellow for highlighting important information.
+$c-cool-gray: #607d8b; // - A cool gray for subtle backgrounds and borders.
+$c-rich-purple: #9c27b0; // - A rich purple for additional depth and variety.
+$c-deep-orange: #ff5722; // - A deep orange for call-to-action buttons.
+$c-cyan: #00bcd4; // - A cyan shade for a refreshing and modern feel.
+
+$c-custom-red: #ff2222;
+//breakpoints
+$bp-small: 576px;
+$bp-medium: 768px;
+$bp-large: 992px;
+$bp-extra-large: 1200px;
+$bp-extra-large: 1400px;
+
+// keyframes
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
