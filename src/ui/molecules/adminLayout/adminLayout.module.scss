@@ -1,0 +1,26 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.adminLayout {
+  display: grid;
+
+  grid-template-columns: 27rem 1fr;
+  grid-template-rows: 5rem auto;
+  width: 100vw;
+  height: 100vh;
+
+  & > div:nth-of-type(1) {
+    // navigation container
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+  & > div:nth-of-type(2) {
+    // sidebar container
+    grid-column: 1/2;
+    grid-row: 1/-1;
+  }
+  & > div:nth-of-type(3) {
+    // outlet container
+    grid-column: 2/3;
+    grid-row: 2/-1;
+  }
+}
