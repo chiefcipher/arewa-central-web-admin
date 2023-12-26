@@ -5,6 +5,8 @@ export const Pages = {
   order: "order",
   account: "account",
   logout: "logout",
+  login: "login",
+  forgot_password: "forgot-password",
 };
 
 export const SuperAdminPages = {

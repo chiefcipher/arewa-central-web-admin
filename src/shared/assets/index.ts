@@ -1,4 +1,3 @@
-import React from "react";
 import ArewaCentralWEBP from "./arewa-central.webp";
 import ArewaCentralPNG from "./arewa-central.png";
 

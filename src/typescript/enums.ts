@@ -11,3 +11,8 @@ export enum E_Order_Remark {
   processing_refund = "Processing Refund",
   refunded = "Refunded",
 }
+
+export enum E_Role {
+  admin = "Admin",
+  super_admin = "Super Admin",
+}

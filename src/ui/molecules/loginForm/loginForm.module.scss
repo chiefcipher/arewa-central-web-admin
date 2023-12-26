@@ -1,0 +1,135 @@
+@import "../../../scss/variables";
+.loginForm {
+  font-family: $f-inter;
+  padding: 2rem 5%;
+  width: 40rem;
+  box-shadow: 0 0 2px rgba($c-cool-gray, 0.689);
+  border-radius: 0.4rem;
+
+  .header {
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+
+    & > a {
+      display: flex;
+      column-gap: 0.5rem;
+      span {
+        color: $c-primary-blue;
+        font-weight: 500;
+      }
+      &:focus span {
+        color: rgba($color: $c-primary-blue, $alpha: 0.67);
+      }
+      img {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    & > p {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    span {
+      color: #8692a6;
+      font-size: 1rem;
+      &:nth-of-type(2) {
+        font-weight: 500;
+        line-height: 1.9rem;
+      }
+    }
+    a {
+      color: $c-primary-blue;
+    }
+  }
+
+  .formArea {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+
+    p {
+      display: flex;
+      flex-direction: column;
+
+      font-family: $f-inter;
+      &.passwordField {
+        position: relative;
+        button {
+          position: absolute;
+          top: 35%;
+          right: 1rem;
+          // transform: translateY(-60%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0.5rem;
+          &:focus {
+            opacity: 0.5;
+            border: 1px solid $c-primary-blue;
+          }
+          img {
+            width: 2rem;
+            height: 2rem;
+
+            cursor: pointer;
+          }
+        }
+      }
+
+      label {
+        font-weight: 500;
+        font-size: 1.3rem;
+        color: #696f79;
+        margin-bottom: 1rem;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        border: 1px solid hsla(215, 82%, 46%, 0.366);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        box-shadow: 0 0 1px #696f79;
+        font-family: inherit;
+
+        &:focus {
+          border-color: rgba(0, 0, 0, 0.689);
+        }
+      }
+
+      & > span {
+        margin-bottom: 3rem;
+        margin-top: 5px;
+        color: red;
+      }
+    }
+    button[type="submit"] {
+      background: $c-darkest-blue;
+      color: #fff;
+      font-family: $f-inter;
+      font-size: 1.4rem;
+      border-radius: 1.2rem;
+      width: 12rem;
+      height: 3rem;
+      margin: 2rem auto;
+      cursor: pointer;
+      transition: all 0.3s linear;
+      border: 1px solid $c-darkest-blue;
+      &:focus {
+        background: transparent;
+        color: $c-darkest-blue;
+      }
+
+      &:hover {
+        transform: translateY(-2px) scale(1.01);
+      }
+      &:active {
+        transform: translateY(-1px) scale(1.009);
+      }
+    }
+  }
+}
