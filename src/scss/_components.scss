@@ -34,3 +34,21 @@
 .redTableButton {
   background-color: red;
 }
+
+// table data
+.actionsTd {
+  p {
+    display: flex;
+    column-gap: 0.4rem;
+
+    .tableViewCta {
+      color: $c-darker-blue;
+    }
+    .tableEditCta {
+      color: green;
+    }
+    .tableDeleteCta {
+      color: $c-custom-red;
+    }
+  }
+}

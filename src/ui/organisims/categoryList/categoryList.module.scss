@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.categoryList {
+  padding: 5rem 5%;
+
+  .wrapper {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    table {
+      width: 100%;
+      font-size: 1.2rem;
+      border-collapse: collapse;
+      tr {
+        &:nth-of-type(even) {
+          background: lighten($color: $c-primary-blue, $amount: 51%);
+        }
+      }
+
+      th {
+        background-color: $c-darkest-blue;
+        color: #fff;
+        padding: 1rem;
+        text-align: left;
+        font-weight: 500;
+      }
+      td {
+        padding: 1rem;
+      }
+    }
+  }
+}

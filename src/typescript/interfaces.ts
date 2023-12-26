@@ -68,3 +68,11 @@ export interface I_Notification {
   priority: "low" | "medium" | "high";
   date: number;
 }
+
+export interface I_Category {
+  id: string;
+  name: string;
+  createdAt: number;
+  description: string;
+  productSize: number;
+}

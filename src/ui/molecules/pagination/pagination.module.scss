@@ -1,0 +1,35 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.pagination {
+  p {
+    display: flex;
+    column-gap: 0.4rem;
+    align-items: center;
+
+    button {
+      padding: 1rem 3rem;
+      background-color: #fff;
+      box-shadow: 0 0 2px hsla(0, 0%, 94%, 1);
+      border-radius: 0.4rem;
+      background: $c-primary-blue;
+      color: #fff;
+      cursor: pointer;
+      outline-offset: 2px;
+      outline: 2px solid transparent;
+      &:focus,
+      &:hover {
+        background: rgba($c-primary-blue, 0.2);
+        color: $c-darkest-blue;
+        font-weight: 500;
+      }
+      &:active {
+        outline: 2px solid $c-primary-blue;
+      }
+    }
+    span {
+      font-weight: 500;
+      padding: 0 1rem;
+    }
+  }
+}

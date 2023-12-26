@@ -10,9 +10,15 @@ import { ReactComponent as TickIcon } from "./tick.svg";
 import SampleProductImage from "./sampleProductImage.png";
 import CardsPaymentMethod from "./payment-logo-horizonal.png";
 import SampleProfileImg from "./sampleProfileImg.png";
+import { ReactComponent as ViewIcon } from "./viewIcon.svg";
+import { ReactComponent as EditIcon } from "./editIcon.svg";
+import { ReactComponent as DeleteIcon } from "./deleteIcon.svg";
 export {
   ArewaCentralPNG,
   ArewaCentralWEBP,
+  EditIcon,
+  ViewIcon,
+  DeleteIcon,
   CardsPaymentMethod,
   SampleProductImage,
   SampleProfileImg,

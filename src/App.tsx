@@ -7,6 +7,7 @@ import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
 import { Login } from "./ui/pages/login/login";
 import { AuthLayout } from "./ui/molecules/authLayout/authLayout";
 import { ForgotPassword } from "./ui/pages/forgotPassword/forgotPassword";
+import { Category } from "./ui/pages/category/category";
 
 function App() {
   const token = "sjsjsjs";
@@ -20,6 +21,7 @@ function App() {
         <>
           <Route Component={AdminLayout}>
             <Route path="/" element={<ComingSoonUI />} />
+            <Route path="/category/*" element={<Category />} />
             <Route path="*" element={<ErrorUI type={404} />} />
           </Route>
         </>
