@@ -1,0 +1,42 @@
+@import "../../../scss/variables";
+.subHeader {
+  font-size: 1.4rem;
+  color: $c-deep-orange;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 1px hsla(0, 0, 90%, 0.2);
+  &:before {
+    content: "- ";
+  }
+}
+.mainHeader {
+  color: $c-darkest-blue;
+  font-size: 1.86rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+  position: relative;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  &::after {
+    transition: all 0.2s linear;
+    background-color: $c-darkest-blue;
+    display: block;
+    content: "";
+    width: 2px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+  &::before {
+    transition: all 0.2s linear;
+    background-color: $c-darkest-blue;
+    display: block;
+    content: "";
+    width: 2rem;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+  }
+}

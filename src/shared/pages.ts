@@ -4,6 +4,7 @@ export const Pages = {
   notification: "notification",
   order: "order",
   account: "account",
+  logout: "logout",
 };
 
 export const SuperAdminPages = {

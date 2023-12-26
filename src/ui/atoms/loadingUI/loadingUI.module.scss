@@ -1,0 +1,19 @@
+@import "../../../scss/variables";
+.loadingUI {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0;
+  color: $c-primary-blue;
+
+  svg {
+    font-size: 30rem;
+    animation: loader 2s linear infinite; /* Apply the rotation animation */
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    margin-top: 10rem;
+    font-weight: 500;
+  }
+}

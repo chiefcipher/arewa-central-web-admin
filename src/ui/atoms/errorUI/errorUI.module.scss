@@ -1,0 +1,30 @@
+@import "../../../scss/variables";
+.errorUI {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 2rem;
+  color: #ff2222;
+
+  svg {
+    font-size: 30rem;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+    margin-top: 10rem;
+    font-weight: 500;
+    text-align: center;
+  }
+  a {
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 500;
+    color: $c-primary-blue;
+    margin-top: 2rem;
+    &:focus,
+    &:hover {
+      color: $c-cool-gray;
+    }
+  }
+}

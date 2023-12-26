@@ -66,6 +66,19 @@ export function Sidebar(): JSX.Element {
           <span>Admin</span>
         </NavLink>
       </div>
+
+      <h3>Auth</h3>
+      <div className={styles.menu}>
+        <NavLink
+          to={Pages.logout}
+          className={({ isActive }) =>
+            isActive ? styles.activeNavLink : undefined
+          }
+        >
+          <Icon icon="ri:admin-line" />
+          <span>Logout</span>
+        </NavLink>
+      </div>
     </div>
   );
 }

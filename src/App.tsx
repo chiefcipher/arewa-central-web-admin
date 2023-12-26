@@ -2,13 +2,15 @@ import React from "react";
 import "./scss/combine-styles.scss";
 import { Routes, Route } from "react-router-dom";
 import { AdminLayout } from "./ui/molecules/adminLayout/adminLayout";
+import { ErrorUI } from "./ui/atoms/errorUI/errorUI";
+import { ComingSoonUI } from "./ui/atoms/comingSoonUI/comingSoonUI";
 
 function App() {
   return (
     <Routes>
       <Route Component={AdminLayout}>
-        <Route path="/" element={<h2>COming soon</h2>} />
-        <Route path="*" element={<h4>Not found</h4>} />
+        <Route path="/" element={<ComingSoonUI />} />
+        <Route path="*" element={<ErrorUI type={404} />} />
       </Route>
     </Routes>
   );
