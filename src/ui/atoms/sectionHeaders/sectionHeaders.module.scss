@@ -10,33 +10,14 @@
   }
 }
 .mainHeader {
-  color: $c-darkest-blue;
-  font-size: 1.86rem;
+  text-align: center;
+  display: block;
+  background-color: $c-darkest-blue;
+  color: #ffff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  line-height: 3rem;
+  font-size: 1.2rem;
   font-weight: 500;
-  margin-bottom: 4rem;
-  position: relative;
-  padding-left: 1rem;
-  padding-bottom: 1rem;
-  &::after {
-    transition: all 0.2s linear;
-    background-color: $c-darkest-blue;
-    display: block;
-    content: "";
-    width: 2px;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-  }
-  &::before {
-    transition: all 0.2s linear;
-    background-color: $c-darkest-blue;
-    display: block;
-    content: "";
-    width: 2rem;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-  }
+  letter-spacing: 0.02em;
 }

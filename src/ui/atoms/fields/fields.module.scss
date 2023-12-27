@@ -1,0 +1,28 @@
+.primaryField {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  label {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #595c61;
+    margin-bottom: 1rem;
+  }
+  input {
+    border: 1px solid hsla(215, 82%, 46%, 0.366);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-size: 1.2rem;
+    box-shadow: 0 0 1px #696f79;
+    font-family: inherit;
+
+    &:focus {
+      border-color: rgba(0, 0, 0, 0.689);
+    }
+  }
+
+  & > span {
+    margin-top: 5px;
+    color: red;
+  }
+}

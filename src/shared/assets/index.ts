@@ -13,9 +13,11 @@ import SampleProfileImg from "./sampleProfileImg.png";
 import { ReactComponent as ViewIcon } from "./viewIcon.svg";
 import { ReactComponent as EditIcon } from "./editIcon.svg";
 import { ReactComponent as DeleteIcon } from "./deleteIcon.svg";
+import { ReactComponent as LoaderIcon } from "./loader.svg";
 export {
   ArewaCentralPNG,
   ArewaCentralWEBP,
+  LoaderIcon,
   EditIcon,
   ViewIcon,
   DeleteIcon,

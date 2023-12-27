@@ -15,6 +15,7 @@ export const CategoryList = () => {
   useEffect(() => {
     if (!sampleCategory) {
       setTimeout(() => {
+        // simulate getting category
         setSampleCategory({
           name: "Shoes",
           description: "A nice category",
@@ -41,6 +42,7 @@ export const CategoryList = () => {
       setCurrentPage(totalPages);
     }
   }, [viewsPerPage, currentPage]);
+
   if (!sampleCategory) return <LoadingUI />;
 
   return (

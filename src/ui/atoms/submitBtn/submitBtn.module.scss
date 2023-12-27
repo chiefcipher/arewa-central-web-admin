@@ -1,0 +1,34 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.submitBtn {
+  svg {
+    animation: spin 1s linear infinite; /* Apply the rotation animation */
+  }
+
+  background: $c-darkest-blue;
+  color: #fff;
+  font-family: $f-inter;
+  font-size: 1.2rem;
+  border-radius: 0.4rem;
+  width: 12rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  border: 1px solid $c-darkest-blue;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+
+  &:active {
+    outline: 2px solid $c-darkest-blue;
+    color: #fff;
+    background-color: $c-darkest-blue;
+  }
+
+  &:hover {
+    transform: translateY(-2px) scale(1.01);
+  }
+  &:active {
+    transform: translateY(-1px) scale(1.009);
+  }
+}
