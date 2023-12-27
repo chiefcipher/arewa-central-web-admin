@@ -11,4 +11,5 @@ export const Pages = {
 
 export const SuperAdminPages = {
   admin: "admin", //for approving admins
+  user: "user", //for viewing users
 };

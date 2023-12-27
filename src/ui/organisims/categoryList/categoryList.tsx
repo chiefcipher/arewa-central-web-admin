@@ -90,7 +90,10 @@ export const CategoryList = () => {
                       <Link to={id} className={"tableViewCta"}>
                         <ViewIcon />
                       </Link>
-                      <Link to={"delete/" + id} className={"tableDeleteCta"}>
+                      <Link
+                        to={`delete/${id}?name=${name}`}
+                        className={"tableDeleteCta"}
+                      >
                         <DeleteIcon />
                       </Link>
                     </p>

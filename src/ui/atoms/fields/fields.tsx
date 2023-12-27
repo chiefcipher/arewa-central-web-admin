@@ -32,3 +32,25 @@ export function PrimaryField({
     </p>
   );
 }
+
+interface I_ViewFieldProp {
+  name: string;
+  value: string | number;
+  type: string;
+  label: string;
+}
+// only used for read only stuff no change handler
+
+export function PrimaryViewField({
+  name,
+  value,
+  type,
+  label,
+}: I_ViewFieldProp): JSX.Element {
+  return (
+    <p className={styles.primaryField}>
+      <label htmlFor={name}>{label}</label>
+      <input type={type} readOnly value={value} name={name} />
+    </p>
+  );
+}
