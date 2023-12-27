@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./productList.module.scss";
 import { I_Product } from "../../../typescript/interfaces";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
-import { formatDate } from "../../../typescript/utils";
+import { formatCurrency, formatDate } from "../../../typescript/utils";
 import {
   DeleteIcon,
   EditIcon,
@@ -77,11 +77,11 @@ export const ProductList = () => {
                 <FilterIcon />{" "}
               </th>
               <th>
-                <span>Price</span>
+                <span>Price(₦)</span>
                 <FilterIcon />{" "}
               </th>
               <th>
-                <span>Discounted Price</span>
+                <span>Discounted Price (₦)</span>
                 <FilterIcon />{" "}
               </th>
               <th>
@@ -124,10 +124,10 @@ export const ProductList = () => {
                     <td>{name}</td>
                     <td>{category}</td>
                     <td>{quantityLeft}</td>
-                    <td>{price}</td>
+                    <td>{formatCurrency(price)}</td>
+                    <td>{formatCurrency(discountedPrice)}</td>
                     <td>{ratingsNumber}</td>
                     <td>{ratingsAverage}</td>
-                    <td>{discountedPrice}</td>
                     <td>{formatDate(createdAt)}</td>
                     <td className={"actionsTd"}>
                       <p>
