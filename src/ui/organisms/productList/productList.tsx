@@ -22,7 +22,7 @@ export const ProductList = () => {
   useEffect(() => {
     if (!sampleProduct) {
       setTimeout(() => {
-        // simulate getting category
+        // simulate getting products
         setSampleProduct(SAMPLE_PRODUCT);
       }, 3000);
     }

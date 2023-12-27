@@ -1,6 +1,7 @@
 import { E_Order_Remark, E_Order_Status } from "./enums";
 
 export interface I_Product {
+  id: string;
   ratingsAverage: number;
   ratingsNumber: number;
   colors?: Array<string>;

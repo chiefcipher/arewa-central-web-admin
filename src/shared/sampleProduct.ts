@@ -2,6 +2,7 @@ import { I_Product } from "../typescript/interfaces";
 import { SampleProductImage } from "./assets";
 
 export const SAMPLE_PRODUCT: I_Product = {
+  id: "random-id",
   ratingsAverage: 4,
   ratingsNumber: 3000,
   colors: ["red", "blue", "orange", "green"],
