@@ -16,10 +16,11 @@ export interface I_Product {
   model?: string;
   description: string;
   quantityLeft: number;
-  isAddedToCart: boolean;
+  isAddedToCart?: boolean;
   quantityInCart: number;
   selectedColor?: string;
   selectedSize?: string;
+  createdAt: number;
 }
 
 export interface I_FormMessage {

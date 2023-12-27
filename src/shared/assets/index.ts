@@ -14,6 +14,8 @@ import { ReactComponent as ViewIcon } from "./viewIcon.svg";
 import { ReactComponent as EditIcon } from "./editIcon.svg";
 import { ReactComponent as DeleteIcon } from "./deleteIcon.svg";
 import { ReactComponent as LoaderIcon } from "./loader.svg";
+import { ReactComponent as FilterIcon } from "./filterIcon.svg";
+
 export {
   ArewaCentralPNG,
   ArewaCentralWEBP,
@@ -21,6 +23,7 @@ export {
   EditIcon,
   ViewIcon,
   DeleteIcon,
+  FilterIcon,
   CardsPaymentMethod,
   SampleProductImage,
   SampleProfileImg,

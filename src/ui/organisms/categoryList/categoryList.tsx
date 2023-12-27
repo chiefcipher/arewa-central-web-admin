@@ -3,7 +3,12 @@ import styles from "./categoryList.module.scss";
 import { I_Category } from "../../../typescript/interfaces";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { formatDate } from "../../../typescript/utils";
-import { DeleteIcon, EditIcon, ViewIcon } from "../../../shared/assets";
+import {
+  DeleteIcon,
+  EditIcon,
+  FilterIcon,
+  ViewIcon,
+} from "../../../shared/assets";
 import { Link } from "react-router-dom";
 import { TopFilter } from "../../molecules/topFilter/topFilter";
 import { Pagination } from "../../molecules/pagination/pagination";
@@ -27,7 +32,7 @@ export const CategoryList = () => {
     }
   }, []);
 
-  const categorySize = 500; //todo comes from api
+  const categorySize = 10; //todo comes from api
   const totalPages = Math.ceil(categorySize / viewsPerPage);
 
   const handlePageChange = (newPage: number) => {
@@ -56,7 +61,7 @@ export const CategoryList = () => {
         // TODO SIZE COMES FROM API
         handleSearchValue={(v) => setSearchValue(v)}
         handleViewsPerPage={(v) =>
-          setViewPerPage((x) => (v > -1 && v < 501 ? v : x))
+          setViewPerPage((x) => (v > -1 && v <= categorySize ? v : x))
         }
       />
       <div className={styles.wrapper}>
@@ -64,10 +69,20 @@ export const CategoryList = () => {
           <thead>
             <tr>
               <th>S/N</th>
-              <th>Name</th>
+              <th>
+                <span>Name</span>
+                <FilterIcon />{" "}
+              </th>
+
               <th>Description</th>
-              <th>Product Size</th>
-              <th>Date Created</th>
+              <th>
+                <span>Product Size</span>
+                <FilterIcon />{" "}
+              </th>
+              <th>
+                <span>Date Created </span>
+                <FilterIcon />{" "}
+              </th>
               <th>Action</th>
             </tr>
           </thead>
