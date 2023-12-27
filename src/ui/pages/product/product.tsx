@@ -7,6 +7,7 @@ import { CategoryEdit } from "../../organisms/categoryEdit/categoryEdit";
 import { CategoryView } from "../../organisms/categoryView/categoryView";
 import { DeleteUI } from "../../molecules/deleteUI/deleteUI";
 import { ProductList } from "../../organisms/productList/productList";
+import { ProductAddNew } from "../../organisms/productAddNew/productAddNew";
 
 export function Product(): JSX.Element {
   // api delete mutation
@@ -23,11 +24,11 @@ export function Product(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<ProductList />} />
-      <Route path="/add-new" element={<CategoryAddNew />} />
+      <Route path="/add-new" element={<ProductAddNew />} />
       <Route path="/edit/:categoryId" element={<CategoryEdit />} />
       <Route
         path="/delete/:deleteId"
-        element={<DeleteUI handleDelete={handleDelete} cancelUrl="/category" />}
+        element={<DeleteUI handleDelete={handleDelete} cancelUrl="/product" />}
       />
       <Route path="/:categoryId" element={<CategoryView />} />
       <Route path="*" element={<ErrorUI type={404} />} />

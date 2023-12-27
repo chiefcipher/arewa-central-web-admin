@@ -5,7 +5,7 @@ import { FormMessage } from "../../atoms/formMessage/formMessage";
 import { I_FormMessage } from "../../../typescript/interfaces";
 import { createCategorySchema } from "../../../validations/category";
 import { SectionHeader } from "../../atoms/sectionHeaders/sectionHeaders";
-import { PrimaryField } from "../../atoms/fields/fields";
+import { PrimaryInputField } from "../../atoms/fields/fields";
 import { SubmitBtn } from "../../atoms/submitBtn/submitBtn";
 export function CategoryAddNew(): JSX.Element {
   const [formMessage, setFormMessage] = useState<I_FormMessage>({
@@ -44,7 +44,7 @@ export function CategoryAddNew(): JSX.Element {
             isSubmitting,
           }) => (
             <Form>
-              <PrimaryField
+              <PrimaryInputField
                 type={"text"}
                 placeholder="eg Bag"
                 value={values.name}
@@ -53,7 +53,7 @@ export function CategoryAddNew(): JSX.Element {
                 name="name"
                 label={"Category Name *"}
               />
-              <PrimaryField
+              <PrimaryInputField
                 type={"text"}
                 placeholder="a nice bag category"
                 value={values.description}

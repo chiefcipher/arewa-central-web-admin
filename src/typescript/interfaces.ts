@@ -1,22 +1,35 @@
 import { E_Order_Remark, E_Order_Status } from "./enums";
 
 export interface I_Product {
+  // id and slug are automatic
   id: string;
+  slug: string;
+
+  // ratings average and ratings number comes from user portal review api
   ratingsAverage: number;
   ratingsNumber: number;
-  colors?: Array<string>;
-  sizes?: Array<string>;
-  imgUrl: string;
+
+  // fields for admin to create product
+  images: string[]; //with at least 3 images and at most 6
+
   name: string;
   category: string;
-  slug: string;
   price: number;
-  discountedPrice?: number;
+
+  quantityLeft: number;
   shortDescription: string;
+  description: string;
+
+  discountedPrice?: number;
   brand?: string;
   model?: string;
-  description: string;
-  quantityLeft: number;
+
+  colors?: Array<string>;
+  sizes?: Array<string>;
+  // end of admin fields to create product
+
+  // the below applies to user profile
+
   isAddedToCart?: boolean;
   quantityInCart: number;
   selectedColor?: string;

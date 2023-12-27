@@ -49,3 +49,14 @@ export function formatDate(dateNum: number) {
   const date = new Date(dateNum);
   return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()} `;
 }
+
+// formats currency to ngn
+export function formatCurrency(value: number) {
+  // Using toLocaleString with options for currency formatting
+  return value.toLocaleString("en-US", {
+    style: "currency",
+    currency: "NGN",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+}

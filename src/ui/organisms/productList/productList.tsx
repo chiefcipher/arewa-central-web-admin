@@ -24,7 +24,7 @@ export const ProductList = () => {
       setTimeout(() => {
         // simulate getting products
         setSampleProduct(SAMPLE_PRODUCT);
-      }, 3000);
+      }, 1000);
     }
   }, []);
 

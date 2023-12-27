@@ -1,4 +1,9 @@
-.primaryField {
+@import "../../../scss/variables";
+
+@import "../../../scss/mixins";
+.primarySelectField,
+.primaryTextAreaField,
+.primaryInputField {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -8,6 +13,8 @@
     color: #595c61;
     margin-bottom: 1rem;
   }
+  textarea,
+  select,
   input {
     border: 1px solid hsla(215, 82%, 46%, 0.366);
     padding: 0.5rem 1rem;
@@ -24,5 +31,67 @@
   & > span {
     margin-top: 5px;
     color: red;
+  }
+}
+
+.primaryTextAreaField {
+  textarea {
+    height: 40rem;
+  }
+}
+
+.primaryVariableSelectorField {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  label {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: #595c61;
+  }
+
+  p:nth-of-type(1) {
+    // input and button
+    display: flex;
+    column-gap: 1rem;
+    input {
+      border: 1px solid hsla(215, 82%, 46%, 0.366);
+      padding: 0.5rem 1rem;
+      border-radius: 0.4rem;
+      font-size: 1.2rem;
+      box-shadow: 0 0 1px #696f79;
+      font-family: inherit;
+      flex: 1;
+
+      &:focus {
+        border-color: rgba(0, 0, 0, 0.689);
+      }
+    }
+    button {
+      // add button
+      background-color: $c-darkest-blue;
+      border-radius: 0.4rem;
+      color: #fff;
+      width: 10rem;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        border: 1px solid $c-darkest-blue;
+        background: transparent;
+        color: $c-darkest-blue;
+      }
+    }
+  }
+  p:nth-of-type(2) {
+    // added values p
+    display: flex;
+    gap: 0.5rem;
+    button {
+      border: 1px solid rgba($c-darkest-blue, 0.2);
+      padding: 0.2rem;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
   }
 }

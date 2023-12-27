@@ -5,7 +5,7 @@ import { FormMessage } from "../../atoms/formMessage/formMessage";
 import { I_Category, I_FormMessage } from "../../../typescript/interfaces";
 import { createCategorySchema } from "../../../validations/category";
 import { SectionHeader } from "../../atoms/sectionHeaders/sectionHeaders";
-import { PrimaryField, PrimaryViewField } from "../../atoms/fields/fields";
+import { PrimaryInputField, PrimaryViewField } from "../../atoms/fields/fields";
 import { SubmitBtn } from "../../atoms/submitBtn/submitBtn";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { useParams } from "react-router-dom";
