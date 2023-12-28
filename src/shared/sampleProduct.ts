@@ -7,7 +7,7 @@ export const SAMPLE_PRODUCT: I_Product = {
   ratingsNumber: 3000,
   colors: ["red", "blue", "orange", "green"],
   sizes: ["S", "M", "L", "XL", "XXL", "XXXL"],
-  images: [SampleProductImage],
+  images: [SampleProductImage, SampleProductImage, SampleProductImage],
   name: "Samsung Galaxy S20",
   category: "phones",
   slug: "samsung-galaxy-s20",

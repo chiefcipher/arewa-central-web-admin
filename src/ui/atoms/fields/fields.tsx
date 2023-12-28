@@ -1,6 +1,7 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useRef } from "react";
 import styles from "./fields.module.scss";
 import { Icon } from "@iconify/react";
+
 interface I_InputFieldProp {
   name: string;
   value: string | number;
@@ -166,6 +167,55 @@ export function PrimaryVariableSelectorField({
       </p>
       <p>{error ? error : ""}</p>
       <button></button>
+    </div>
+  );
+}
+
+interface I_PrimaryFileField {
+  handleChange: (a: ChangeEvent<any>) => void;
+  error?: string | false;
+  label: string;
+  name: string;
+  base64Images: Array<string>;
+}
+export function PrimarySelectMultipleImageField({
+  handleChange,
+  error,
+  label,
+  name,
+  base64Images,
+}: I_PrimaryFileField): JSX.Element {
+  const inputRef = useRef(null);
+  const handleBtnClick = () => {
+    const node = inputRef.current as HTMLInputElement | null;
+    if (node) node.click();
+  };
+  return (
+    <div className={styles.primaryMultipleImagesField}>
+      <label htmlFor={name}>{label}</label>
+
+      <p>
+        <input
+          type={"file"}
+          ref={inputRef}
+          onChange={handleChange}
+          name={name}
+          multiple
+        />
+        <span>
+          Min:3 and Max: 5 (all must be less than 2MB (advised ratio of 1:1)){" "}
+        </span>
+        <button onClick={handleBtnClick} type="button">
+          Select files
+        </button>
+      </p>
+      <p>Image preview</p>
+      <p>
+        {base64Images.map((img, i) => (
+          <img src={img} key={i} alt={`${i + 1}`} />
+        ))}
+      </p>
+      <span>{error ? error : ""}</span>
     </div>
   );
 }

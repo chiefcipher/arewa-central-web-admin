@@ -1,8 +1,8 @@
 import React, { ChangeEvent, useCallback, useEffect, useState } from "react";
-import styles from "./productAddNew.module.scss";
+import styles from "../productAddNew/productAddNew.module.scss";
 import { Form, Formik } from "formik";
 import { FormMessage } from "../../atoms/formMessage/formMessage";
-import { I_FormMessage } from "../../../typescript/interfaces";
+import { I_FormMessage, I_Product } from "../../../typescript/interfaces";
 import { SectionHeader } from "../../atoms/sectionHeaders/sectionHeaders";
 import {
   PrimarySelectMultipleImageField,
@@ -14,6 +14,8 @@ import {
 import { SubmitBtn } from "../../atoms/submitBtn/submitBtn";
 import { formatCurrency } from "../../../typescript/utils";
 import { createProductSchema } from "../../../validations/product";
+import { SAMPLE_PRODUCT } from "../../../shared/sampleProduct";
+import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 
 const sampleCategory = {
   id: "random-id",
@@ -22,7 +24,7 @@ const sampleCategory = {
   description: "A nice category",
   productSize: 40,
 };
-export function ProductAddNew(): JSX.Element {
+export function ProductView(): JSX.Element {
   const [formMessage, setFormMessage] = useState<I_FormMessage>({
     type: "",
     content: "",
@@ -34,7 +36,16 @@ export function ProductAddNew(): JSX.Element {
 
   const [base64Images, setBase64Images] = useState<Array<string>>([]);
   const [imageProcessingError, setImageProcessingError] = useState<string>("");
+  const [sampleProduct, setSampleProduct] = useState<I_Product | null>(null);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setSampleProduct(SAMPLE_PRODUCT);
+      setColors(sampleProduct?.colors || []);
+      setSizes(sampleProduct?.sizes || []);
+      setBase64Images(sampleProduct?.images || []);
+    }, 1000);
+  }, []);
   const handleSubmit = (values: any, actions: any) => {
     if (
       imageProcessingError ||
@@ -60,7 +71,7 @@ export function ProductAddNew(): JSX.Element {
       actions.setSubmitting(false);
       setFormMessage({
         type: "success",
-        content: values.name + " product created successfully",
+        content: values.name + " product updated successfully",
       });
       actions.setSubmitting(false);
       actions.resetForm();
@@ -116,8 +127,6 @@ export function ProductAddNew(): JSX.Element {
         return;
       }
 
-     
-
       try {
         const base64Promises = Array.from(files).map((file) =>
           convertToBase64(file)
@@ -144,25 +153,27 @@ export function ProductAddNew(): JSX.Element {
       reader.readAsDataURL(file);
     });
 
+  if (!sampleProduct) return <LoadingUI />;
+  console.log(sampleProduct.images, "IMAGES");
   return (
     <div className={styles.addNew}>
-      <SectionHeader>Create Product</SectionHeader>
+      <SectionHeader>View Product</SectionHeader>
       <div className={styles.wrapper}>
         <Formik
           initialValues={{
-            name: "",
-            category: "",
-            price: "",
-            discountedPrice: "",
-            shortDescription: "",
-            description: "",
-            quantityLeft: "",
-            brand: "",
-            model: "",
-            sizes: [],
-            colors: [],
+            name: sampleProduct.name || "",
+            category: sampleProduct.category || "",
+            price: sampleProduct.price || "",
+            discountedPrice: sampleProduct.discountedPrice || "",
+            shortDescription: sampleProduct.shortDescription || "",
+            description: sampleProduct.description || "",
+            quantityLeft: sampleProduct.quantityLeft || "",
+            brand: sampleProduct.brand || "",
+            model: sampleProduct.model || "",
+            sizes: sampleProduct.sizes || [],
+            colors: sampleProduct.colors || [],
           }}
-          validationSchema={createProductSchema}
+          // validationSchema={createProductSchema}
           onSubmit={handleSubmit}
         >
           {({
@@ -321,15 +332,16 @@ export function ProductAddNew(): JSX.Element {
                 handleChange={handleFileChange}
                 base64Images={base64Images}
               />
+
               <div style={{ fontSize: "1.2rem", marginBottom: "1.5rem" }}>
                 <FormMessage {...formMessage} />
               </div>
 
-              <SubmitBtn
+              {/* <SubmitBtn
                 isAsync={isSubmitting}
-                text={"Submit"}
+                text={"Update"}
                 handleSubmit={handleSubmit}
-              />
+              /> */}
             </Form>
           )}
         </Formik>

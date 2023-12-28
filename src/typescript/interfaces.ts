@@ -10,7 +10,7 @@ export interface I_Product {
   ratingsNumber: number;
 
   // fields for admin to create product
-  images: string[]; //with at least 3 images and at most 6
+  images: string[]; //with at least 3 images and at most 5
 
   name: string;
   category: string;
