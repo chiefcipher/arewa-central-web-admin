@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./orderList.module.scss";
-import {
-  I_Notification,
-  I_Order,
-  I_Product,
-} from "../../../typescript/interfaces";
+import { I_Order } from "../../../typescript/interfaces";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { formatCurrency, formatDate } from "../../../typescript/utils";
 import {

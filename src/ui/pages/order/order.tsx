@@ -2,12 +2,8 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ErrorUI } from "../../atoms/errorUI/errorUI";
 import { DeleteUI } from "../../molecules/deleteUI/deleteUI";
-import { MessageAddNew } from "../../organisms/messageAddNew/messageAddNew";
-import { MessageEdit } from "../../organisms/messageEdit/messageEdit";
-import { MessageView } from "../../organisms/messageView/messageView";
 import { OrderList } from "../../organisms/orderList/orderList";
 import { OrderEdit } from "../../organisms/orderEdit/orderEdit";
-import { ComingSoonUI } from "../../atoms/comingSoonUI/comingSoonUI";
 import { OrderView } from "../../organisms/orderView/orderView";
 
 export function Order(): JSX.Element {

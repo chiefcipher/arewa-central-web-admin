@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { CategoryList } from "../../organisms/categoryList/categoryList";
 import { CategoryAddNew } from "../../organisms/categoryAddNew/categoryAddNew";

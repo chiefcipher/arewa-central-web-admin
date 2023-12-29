@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { CategoryList } from "../../organisms/categoryList/categoryList";
-import { CategoryAddNew } from "../../organisms/categoryAddNew/categoryAddNew";
 import { ErrorUI } from "../../atoms/errorUI/errorUI";
-import { CategoryEdit } from "../../organisms/categoryEdit/categoryEdit";
-import { CategoryView } from "../../organisms/categoryView/categoryView";
 import { DeleteUI } from "../../molecules/deleteUI/deleteUI";
 import { ProductList } from "../../organisms/productList/productList";
 import { ProductAddNew } from "../../organisms/productAddNew/productAddNew";

@@ -10,7 +10,6 @@ import {
 } from "../../atoms/fields/fields";
 import { SubmitBtn } from "../../atoms/submitBtn/submitBtn";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
-import { editOrderSchema } from "../../../validations/order";
 import { updateAdminSchema } from "../../../validations/user";
 import { E_Roles } from "../../../typescript/enums";
 
