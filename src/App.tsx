@@ -10,6 +10,7 @@ import { ForgotPassword } from "./ui/pages/forgotPassword/forgotPassword";
 import { Category } from "./ui/pages/category/category";
 import { Product } from "./ui/pages/product/product";
 import { Message } from "./ui/pages/message/message";
+import { Order } from "./ui/pages/order/order";
 
 function App() {
   const token = "sjsjsjs";
@@ -26,6 +27,7 @@ function App() {
             <Route path="/category/*" element={<Category />} />
             <Route path="/product/*" element={<Product />} />
             <Route path="/message/*" element={<Message />} />
+            <Route path="/order/*" element={<Order />} />
             <Route path="*" element={<ErrorUI type={404} />} />
           </Route>
         </>

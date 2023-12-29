@@ -51,11 +51,15 @@ export interface I_Review {
 }
 
 export interface I_Order {
-  date: string;
-  orderId: string;
-  status: E_Order_Status;
+  date: number;
+  orderId: string; //generated to be something like #2023-12-29-xyz-anbbdbdb
   amount: number;
   quantity: number;
+  orderItems?: Array<I_Product>;
+  userEmail?: string; //comes from api when creating the order
+  id: string; //comes from api
+  // only status and remark can be updated from edit api
+  status: E_Order_Status;
   remark: E_Order_Remark;
 }
 

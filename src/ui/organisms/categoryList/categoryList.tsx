@@ -57,7 +57,7 @@ export const CategoryList = () => {
         viewsPerPage={viewsPerPage}
         searchInputPlaceholder="Search by category"
         sectionName="Categories"
-        addNewLink="add-new"
+        addNewLink="create"
         sectionSize={categorySize}
         // TODO SIZE COMES FROM API
         handleSearchValue={(v) => setSearchValue(v)}

@@ -26,7 +26,7 @@ export function Product(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<ProductList />} />
-      <Route path="/add-new" element={<ProductAddNew />} />
+      <Route path="/create" element={<ProductAddNew />} />
       <Route path="/edit/:productId" element={<ProductEdit />} />
       <Route
         path="/delete/:deleteId"

@@ -22,7 +22,7 @@ export function Category(): JSX.Element {
   return (
     <Routes>
       <Route path="/" element={<CategoryList />} />
-      <Route path="/add-new" element={<CategoryAddNew />} />
+      <Route path="/create" element={<CategoryAddNew />} />
       <Route path="/edit/:categoryId" element={<CategoryEdit />} />
       <Route
         path="/delete/:deleteId"

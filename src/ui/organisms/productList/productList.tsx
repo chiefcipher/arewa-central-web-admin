@@ -52,7 +52,7 @@ export const ProductList = () => {
         viewsPerPage={viewsPerPage}
         searchInputPlaceholder="Search by name"
         sectionName="Products"
-        addNewLink="add-new"
+        addNewLink="create"
         sectionSize={productSize}
         // TODO SIZE COMES FROM API
         handleSearchValue={(v) => setSearchValue(v)}

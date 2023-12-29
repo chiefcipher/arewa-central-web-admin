@@ -59,7 +59,7 @@ export const MessageList = () => {
         searchValue={searchValue}
         viewsPerPage={viewsPerPage}
         sectionName="Messages"
-        addNewLink="add-new"
+        addNewLink="create"
         sectionSize={notification_size}
         searchInputPlaceholder="Search by email"
         // TODO SIZE COMES FROM API
