@@ -55,6 +55,7 @@ export const CategoryList = () => {
       <TopFilter
         searchValue={searchValue}
         viewsPerPage={viewsPerPage}
+        searchInputPlaceholder="Search by category"
         sectionName="Categories"
         addNewLink="add-new"
         sectionSize={categorySize}

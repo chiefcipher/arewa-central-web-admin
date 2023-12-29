@@ -9,6 +9,7 @@ import { AuthLayout } from "./ui/molecules/authLayout/authLayout";
 import { ForgotPassword } from "./ui/pages/forgotPassword/forgotPassword";
 import { Category } from "./ui/pages/category/category";
 import { Product } from "./ui/pages/product/product";
+import { Message } from "./ui/pages/message/message";
 
 function App() {
   const token = "sjsjsjs";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<ComingSoonUI />} />
             <Route path="/category/*" element={<Category />} />
             <Route path="/product/*" element={<Product />} />
+            <Route path="/message/*" element={<Message />} />
             <Route path="*" element={<ErrorUI type={404} />} />
           </Route>
         </>

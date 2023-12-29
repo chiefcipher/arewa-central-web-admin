@@ -6,10 +6,11 @@ interface I_InputFieldProp {
   name: string;
   value: string | number;
   handleChange: (a: ChangeEvent<any>) => void;
-  type: "text" | "tel" | "number";
+  type: "text" | "tel" | "number" | "email";
   placeholder: string;
   error?: string | false;
   label: string;
+  readOnly?: boolean;
 }
 export function PrimaryInputField({
   name,
@@ -19,12 +20,14 @@ export function PrimaryInputField({
   type,
   placeholder,
   label,
+  readOnly,
 }: I_InputFieldProp): JSX.Element {
   return (
     <p className={styles.primaryInputField}>
       <label htmlFor={name}>{label}</label>
       <input
         type={type}
+        readOnly={readOnly}
         placeholder={placeholder}
         value={value}
         onChange={handleChange}
@@ -40,6 +43,7 @@ export function PrimaryTextAreaField({
   value,
   handleChange,
   error,
+  readOnly,
   placeholder,
   label,
   type = "text",
@@ -49,6 +53,7 @@ export function PrimaryTextAreaField({
       <label htmlFor={name}>{label}</label>
       <textarea
         placeholder={placeholder}
+        readOnly={readOnly}
         value={value}
         onChange={handleChange}
         name={name}
@@ -64,6 +69,7 @@ interface I_SelectFieldProp {
   handleChange: (a: ChangeEvent<any>) => void;
   error?: string | false;
   label: string;
+  readOnly?: boolean;
   options: Array<{ content: string; id: string }>;
 }
 export function PrimarySelectField({
@@ -71,13 +77,19 @@ export function PrimarySelectField({
   value,
   handleChange,
   error,
+  readOnly,
   label,
   options,
 }: I_SelectFieldProp): JSX.Element {
   return (
     <p className={styles.primarySelectField}>
       <label htmlFor={name}>{label}</label>
-      <select name={name} value={value} onChange={handleChange}>
+      <select
+        name={name}
+        value={value}
+        onChange={handleChange}
+        disabled={readOnly}
+      >
         <option value="">Select</option>
         {options.map((option, i) => (
           <option key={option.id + i} value={option.id}>

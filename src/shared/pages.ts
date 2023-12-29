@@ -1,7 +1,7 @@
 export const Pages = {
   category: "category",
   product: "product",
-  notification: "notification",
+  message: "message",
   order: "order",
   account: "account",
   logout: "logout",

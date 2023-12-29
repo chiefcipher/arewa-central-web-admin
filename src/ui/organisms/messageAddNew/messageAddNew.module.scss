@@ -1,0 +1,15 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.addNew {
+  padding: 4rem 5%;
+
+  .wrapper {
+    padding-top: 4rem;
+    // form {
+    //   display: flex;
+    //   flex-direction: column;
+    //   row-gap: 1rem;
+    // }
+  }
+}

@@ -77,11 +77,14 @@ export interface I_BankDetails {
 }
 
 export interface I_Notification {
-  sender: string;
+  id?: string; //id is automatically generated in api
+  sender?: string; //sender is automatically generated in api
+  date?: number; //date is automatically generated in api
+
+  recipientEmail: string;
   title: string;
   content: string;
   priority: "low" | "medium" | "high";
-  date: number;
 }
 
 export interface I_Category {

@@ -35,13 +35,13 @@ export function Sidebar(): JSX.Element {
           <span>Product</span>
         </NavLink>
         <NavLink
-          to={Pages.notification}
+          to={Pages.message}
           className={({ isActive }) =>
             isActive ? styles.activeNavLink : undefined
           }
         >
-          <Icon icon="iconamoon:notification-fill" />
-          <span>Notification</span>
+          <Icon icon="ant-design:message-filled" />
+          <span>Message</span>
         </NavLink>
         <NavLink
           to={Pages.order}

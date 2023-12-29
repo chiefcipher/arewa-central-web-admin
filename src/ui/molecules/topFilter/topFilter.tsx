@@ -6,6 +6,7 @@ interface I_TopFilterProps {
   sectionSize: number;
   addNewLink: string;
   viewsPerPage: number;
+  searchInputPlaceholder: string;
   searchValue: string;
   handleSearchValue: (a: string) => void;
   handleViewsPerPage: (a: number) => void;
@@ -16,6 +17,7 @@ export function TopFilter({
   addNewLink,
   searchValue,
   handleSearchValue,
+  searchInputPlaceholder,
   viewsPerPage,
   handleViewsPerPage,
 }: I_TopFilterProps): JSX.Element {
@@ -30,7 +32,8 @@ export function TopFilter({
         </Link>
         <input
           type="text"
-          placeholder="Search"
+          value={searchValue}
+          placeholder={searchInputPlaceholder}
           className={styles.searchInput}
           onChange={(e) => handleSearchValue(e.target.value)}
         />

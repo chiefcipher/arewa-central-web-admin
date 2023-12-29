@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from "./productList.module.scss";
-import { I_Product } from "../../../typescript/interfaces";
+import styles from "./messageList.module.scss";
+import { I_Notification, I_Product } from "../../../typescript/interfaces";
 import { LoadingUI } from "../../atoms/loadingUI/loadingUI";
 import { formatCurrency, formatDate } from "../../../typescript/utils";
 import {
@@ -12,24 +12,32 @@ import {
 import { Link } from "react-router-dom";
 import { TopFilter } from "../../molecules/topFilter/topFilter";
 import { Pagination } from "../../molecules/pagination/pagination";
-import { SAMPLE_PRODUCT } from "../../../shared/sampleProduct";
 import { Icon } from "@iconify/react";
-export const ProductList = () => {
-  const [sampleProduct, setSampleProduct] = useState<I_Product | null>(null);
+export const MessageList = () => {
+  const [sampleNotification, setSampleNotification] =
+    useState<I_Notification | null>(null);
   const [searchValue, setSearchValue] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [viewsPerPage, setViewPerPage] = useState(20);
   useEffect(() => {
-    if (!sampleProduct) {
+    if (!sampleNotification) {
       setTimeout(() => {
         // simulate getting products
-        setSampleProduct(SAMPLE_PRODUCT);
+        setSampleNotification({
+          sender: "Admin 1",
+          title: "Update bank details",
+          content: "Kindly update bank details to process refund",
+          priority: "high",
+          date: Date.now(),
+          id: "random-id",
+          recipientEmail: "user1@gmail.com",
+        });
       }, 1000);
     }
   }, []);
 
-  const productSize = 4000; //todo comes from api
-  const totalPages = Math.ceil(productSize / viewsPerPage);
+  const notification_size = 4000; //todo comes from api
+  const totalPages = Math.ceil(notification_size / viewsPerPage);
 
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
@@ -37,23 +45,23 @@ export const ProductList = () => {
 
   useEffect(() => {
     // use effect for pagination
-    const totalPages = Math.ceil(productSize / viewsPerPage);
+    const totalPages = Math.ceil(notification_size / viewsPerPage);
     if (currentPage > totalPages) {
       setCurrentPage(totalPages);
     }
   }, [viewsPerPage, currentPage]);
 
-  if (!sampleProduct) return <LoadingUI />;
+  if (!sampleNotification) return <LoadingUI />;
 
   return (
-    <div className={styles.categoryList}>
+    <div className={styles.list}>
       <TopFilter
         searchValue={searchValue}
         viewsPerPage={viewsPerPage}
-        searchInputPlaceholder="Search by name"
-        sectionName="Products"
+        sectionName="Messages"
         addNewLink="add-new"
-        sectionSize={productSize}
+        sectionSize={notification_size}
+        searchInputPlaceholder="Search by email"
         // TODO SIZE COMES FROM API
         handleSearchValue={(v) => setSearchValue(v)}
         handleViewsPerPage={(v) =>
@@ -66,35 +74,24 @@ export const ProductList = () => {
             <tr>
               <th>S/N</th>
               <th>
-                <span>Name</span>
+                <span>Recipient Email</span>
                 <FilterIcon />{" "}
               </th>
               <th>
-                <span>Category</span>
+                <span>Title</span>
+                <FilterIcon />{" "}
+              </th>
+              <th>
+                <span>Priority</span>
                 <FilterIcon />
               </th>
               <th>
-                <span>Product Size</span>
+                <span>Sent By</span>
                 <FilterIcon />{" "}
               </th>
+
               <th>
-                <span>Price(₦)</span>
-                <FilterIcon />{" "}
-              </th>
-              <th>
-                <span>Discounted Price (₦)</span>
-                <FilterIcon />{" "}
-              </th>
-              <th>
-                <span>Ratings Count</span>
-                <FilterIcon />{" "}
-              </th>
-              <th>
-                <span>Ratings Average </span>
-                <FilterIcon />{" "}
-              </th>
-              <th>
-                <span>Date Created</span>
+                <span>Date Sent</span>
                 <FilterIcon />{" "}
               </th>
 
@@ -104,32 +101,17 @@ export const ProductList = () => {
 
           <tbody>
             {Array(viewsPerPage)
-              .fill(sampleProduct)
+              .fill(sampleNotification)
               .map(
-                (
-                  {
-                    name,
-                    category,
-                    ratingsNumber,
-                    ratingsAverage,
-                    price,
-                    discountedPrice,
-                    quantityLeft,
-                    createdAt,
-                    id,
-                  },
-                  i
-                ) => (
+                ({ sender, title, priority, date, id, recipientEmail }, i) => (
                   <tr key={i + 1}>
                     <td>{viewsPerPage * (currentPage - 1) + i + 1}</td>
-                    <td>{name}</td>
-                    <td>{category}</td>
-                    <td>{quantityLeft}</td>
-                    <td>{formatCurrency(price)}</td>
-                    <td>{formatCurrency(discountedPrice)}</td>
-                    <td>{ratingsNumber}</td>
-                    <td>{ratingsAverage}</td>
-                    <td>{formatDate(createdAt)}</td>
+                    <td>{recipientEmail}</td>
+                    <td>{title}</td>
+                    <td>{priority}</td>
+
+                    <td>{sender}</td>
+                    <td>{formatDate(date)}</td>
                     <td className={"actionsTd"}>
                       <p>
                         <Link to={"edit/" + id} className={"tableEditCta"}>
@@ -139,7 +121,7 @@ export const ProductList = () => {
                           <ViewIcon />
                         </Link>
                         <Link
-                          to={`delete/${id}?name=${name}`}
+                          to={`delete/${id}?name=${title}`}
                           className={"tableDeleteCta"}
                         >
                           <DeleteIcon />
