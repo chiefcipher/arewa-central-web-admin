@@ -57,13 +57,13 @@ export function Sidebar(): JSX.Element {
       <h3>Super Admin</h3>
       <div className={styles.menu}>
         <NavLink
-          to={SuperAdminPages.admin}
+          to={SuperAdminPages.manage_admin}
           className={({ isActive }) =>
             isActive ? styles.activeNavLink : undefined
           }
         >
           <Icon icon="ri:admin-line" />
-          <span>Admin</span>
+          <span>Manage Admin</span>
         </NavLink>
         <NavLink
           to={SuperAdminPages.user}

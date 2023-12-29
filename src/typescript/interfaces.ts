@@ -98,3 +98,15 @@ export interface I_Category {
   description: string;
   productSize: number;
 }
+
+export interface I_User {
+  id?: string;
+  email: string;
+  tel: string;
+  gender: string;
+  password?: string;
+  confirmPassword?: string;
+  role: string;
+  isVerifiedEmail: boolean;
+  isActive?: boolean; // false for deleted accounts
+}

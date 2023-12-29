@@ -10,6 +10,6 @@ export const Pages = {
 };
 
 export const SuperAdminPages = {
-  admin: "admin", //for approving admins
+  manage_admin: "manage-admin", //for approving admins
   user: "user", //for viewing users
 };

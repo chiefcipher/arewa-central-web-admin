@@ -26,7 +26,7 @@ export function Category(): JSX.Element {
       <Route path="/edit/:categoryId" element={<CategoryEdit />} />
       <Route
         path="/delete/:deleteId"
-        element={<DeleteUI handleDelete={handleDelete} cancelUrl="/category" />}
+        element={<DeleteUI handleDelete={handleDelete} cancelUrl="../" />}
       />
       <Route path="/:categoryId" element={<CategoryView />} />
       <Route path="*" element={<ErrorUI type={404} />} />

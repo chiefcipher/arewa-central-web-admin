@@ -30,7 +30,7 @@ export function Product(): JSX.Element {
       <Route path="/edit/:productId" element={<ProductEdit />} />
       <Route
         path="/delete/:deleteId"
-        element={<DeleteUI handleDelete={handleDelete} cancelUrl="/product" />}
+        element={<DeleteUI handleDelete={handleDelete} cancelUrl="../" />}
       />
       <Route path="/:productId" element={<ProductView />} />
       <Route path="*" element={<ErrorUI type={404} />} />

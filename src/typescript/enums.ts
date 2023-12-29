@@ -12,7 +12,9 @@ export enum E_Order_Remark {
   refunded = "Refunded",
 }
 
-export enum E_Role {
-  admin = "Admin",
-  super_admin = "Super Admin",
+export enum E_Roles {
+  admin = "admin",
+  super_admin = "super_admin",
+  user = "user",
+  potential_admin = "potential_admin",
 }

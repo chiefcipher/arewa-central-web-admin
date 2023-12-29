@@ -2,15 +2,14 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ErrorUI } from "../../atoms/errorUI/errorUI";
 import { DeleteUI } from "../../molecules/deleteUI/deleteUI";
-import { MessageAddNew } from "../../organisms/messageAddNew/messageAddNew";
-import { MessageEdit } from "../../organisms/messageEdit/messageEdit";
-import { MessageView } from "../../organisms/messageView/messageView";
 import { OrderList } from "../../organisms/orderList/orderList";
 import { OrderEdit } from "../../organisms/orderEdit/orderEdit";
-import { ComingSoonUI } from "../../atoms/comingSoonUI/comingSoonUI";
 import { OrderView } from "../../organisms/orderView/orderView";
+import { ManageAdminList } from "../../organisms/manageAdminList/manageAdminList";
+import { ManageAdminEdit } from "../../organisms/manageAdminEdit/manageAdminEdit";
+import { ManageAdminView } from "../../organisms/manageAdminView/manageAdminView";
 
-export function Order(): JSX.Element {
+export function ManageAdmin(): JSX.Element {
   // api delete mutation
   const handleDelete: () => Promise<boolean> = async () =>
     new Promise((resolve, reject) => {
@@ -24,11 +23,11 @@ export function Order(): JSX.Element {
 
   return (
     <Routes>
-      <Route path="/" element={<OrderList />} />
-      {/* we do not create orders from backend */}
+      <Route path="/" element={<ManageAdminList />} />
+      {/* admins sign up from frontend */}
       {/* <Route path="/create" element={<ComingSoonUI />} /> */}
-      <Route path="/edit/:orderId" element={<OrderEdit />} />
-      <Route path="/:orderId" element={<OrderView />} />
+      <Route path="/edit/:adminId" element={<ManageAdminEdit />} />
+      <Route path="/:adminId" element={<ManageAdminView />} />
       <Route
         path="/delete/:deleteId"
         element={<DeleteUI handleDelete={handleDelete} cancelUrl="../" />}

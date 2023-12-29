@@ -32,16 +32,16 @@
     font-size: 1.2rem;
     box-shadow: 0 0 1px #696f79;
     font-family: inherit;
-    &:read-only,
-    &:disabled {
-      cursor: not-allowed;
-    }
 
     &:focus {
       border-color: rgba(0, 0, 0, 0.689);
     }
   }
 
+  select:disabled,
+  input:read-only {
+    cursor: not-allowed;
+  }
   & > span {
     @extend %error-span;
   }

@@ -26,7 +26,7 @@ export function Message(): JSX.Element {
       <Route path="/edit/:messageId" element={<MessageEdit />} />
       <Route
         path="/delete/:deleteId"
-        element={<DeleteUI handleDelete={handleDelete} cancelUrl="/message" />}
+        element={<DeleteUI handleDelete={handleDelete} cancelUrl="../" />}
       />
       <Route path="/:messageId" element={<MessageView />} />
       <Route path="*" element={<ErrorUI type={404} />} />
