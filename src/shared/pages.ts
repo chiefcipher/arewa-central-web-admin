@@ -6,10 +6,11 @@ export const Pages = {
   account: "account",
   logout: "logout",
   login: "login",
+  settings: "settings",
   forgot_password: "forgot-password",
 };
 
 export const SuperAdminPages = {
   manage_admin: "manage-admin", //for approving admins
-  user: "user", //for viewing users
+  manage_users: "manage_users", //for viewing users
 };

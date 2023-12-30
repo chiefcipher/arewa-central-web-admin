@@ -66,18 +66,27 @@ export function Sidebar(): JSX.Element {
           <span>Manage Admin</span>
         </NavLink>
         <NavLink
-          to={SuperAdminPages.user}
+          to={SuperAdminPages.manage_users}
           className={({ isActive }) =>
             isActive ? styles.activeNavLink : undefined
           }
         >
           <Icon icon="ph:user-fill" />
-          <span>Users</span>
+          <span>Manage Users</span>
         </NavLink>
       </div>
 
-      <h3>Auth</h3>
+      <h3>Actions</h3>
       <div className={styles.menu}>
+        <NavLink
+          to={Pages.settings}
+          className={({ isActive }) =>
+            isActive ? styles.activeNavLink : undefined
+          }
+        >
+          <Icon icon="ri:admin-line" />
+          <span>Settings</span>
+        </NavLink>
         <NavLink
           to={Pages.logout}
           className={({ isActive }) =>
