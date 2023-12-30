@@ -1,0 +1,52 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+  height: min-content;
+  border: 1px solid rgba($c-cool-gray, 0.2);
+  padding: 2rem;
+  border-radius: 0.8rem;
+
+  @include respondTo(max, $bp-medium) {
+    width: 100%;
+  }
+  p {
+    margin: 0.4rem 0;
+    text-align: center;
+  }
+  input {
+    display: none;
+  }
+  img {
+    width: 12rem;
+    height: 12rem;
+    align-self: center;
+    box-shadow: 0 0 2px 2px rgba($c-cool-gray, 0.2);
+    border-radius: 50%;
+  }
+
+  button {
+    // change image btn
+    border: 1px dashed rgba($c-cool-gray, 0.5);
+    cursor: pointer;
+    padding: 0.5rem 2.5rem;
+    font-size: 1.24rem;
+    border-radius: 0.4rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:hover,
+    &:focus {
+      // background-color: $c-darkest-blue;
+      // color: #fff;
+      outline: 2px solid currentColor;
+    }
+  }
+}

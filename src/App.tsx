@@ -13,6 +13,7 @@ import { Message } from "./ui/pages/message/message";
 import { Order } from "./ui/pages/order/order";
 import { ManageAdmin } from "./ui/pages/manageAdmin/manageAdmin";
 import { ManageUsers } from "./ui/pages/manageUsers/manageUsers";
+import { Profile } from "./ui/pages/profile/profile";
 
 function App() {
   const token = "sjsjsjs";
@@ -32,6 +33,7 @@ function App() {
             <Route path="/order/*" element={<Order />} />
             <Route path="/manage-admin/*" element={<ManageAdmin />} />
             <Route path="/manage_users/*" element={<ManageUsers />} />
+            <Route path="/profile/*" element={<Profile />} />
             <Route path="*" element={<ErrorUI type={404} />} />
           </Route>
         </>

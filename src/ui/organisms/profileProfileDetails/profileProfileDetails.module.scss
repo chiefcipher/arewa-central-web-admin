@@ -1,0 +1,136 @@
+@import "../../../scss/variables";
+@import "../../../scss/mixins";
+.profileDetails {
+  border: 1px solid rgba($c-cool-gray, 0.2);
+  padding: 2rem;
+  border-radius: 0.8rem;
+
+  @include respondTo(max, $bp-medium) {
+    width: 100%;
+  }
+  form > p {
+    &:nth-of-type(1) {
+      // email paragraph
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      column-gap: 1rem;
+      align-items: start;
+      input,
+      label {
+        grid-column: 1/-1;
+      }
+      & > span {
+        padding: 0.4rem;
+        text-align: center;
+        border-radius: 0.4rem;
+        width: 8rem;
+        font-size: 1.1rem;
+        color: red;
+        background-color: rgba(red, 0.05);
+
+        &.verifiedEmail {
+          color: green;
+          background-color: rgba(green, 0.1);
+        }
+      }
+
+      button {
+        background-color: hsl(0, 0%, 97%);
+        color: $c-darkest-blue;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        column-gap: 0.5rem;
+        width: fit-content;
+        font-size: 1.1rem;
+        border-radius: 0.4rem;
+        padding: 0.5rem 2rem;
+        cursor: pointer;
+        transition: all 0.2s linear;
+
+        svg {
+          font-size: 1rem;
+        }
+        &:disabled {
+          cursor: not-allowed;
+        }
+        &:active {
+          transform: translateY(0px);
+        }
+
+        &:hover,
+        &:focus {
+          background-color: $c-darkest-blue;
+          color: #fff;
+          transform: translateY(-2px);
+        }
+      }
+    }
+  }
+}
+
+.profileDetails {
+  p.promptPara {
+    font-size: 1.1rem;
+    margin: 2rem 0;
+  }
+  form > p {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    row-gap: 0.5rem;
+
+    label {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+    select,
+    input {
+      border: 1px solid rgba($c-cool-gray, 0.2);
+      padding: 0.4rem 1rem;
+      font-size: 1.2rem;
+      border-radius: 0.8rem;
+
+      &[type="email"] {
+        cursor: not-allowed;
+      }
+
+      &:focus {
+        border: 1px solid $c-darker-blue;
+      }
+    }
+    & > span {
+      color: red;
+      font-size: 1rem;
+    }
+  }
+  .submitBtn {
+    background-color: hsl(0, 0%, 96%);
+    color: $c-darkest-blue;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+    padding: 0.5rem 3rem;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    margin-top: 4rem;
+    outline: 2px solid hsl(0, 0%, 96%);
+    outline-offset: 2px;
+    &:disabled {
+      cursor: not-allowed;
+    }
+    &:active {
+      transform: translateY(0px);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $c-darkest-blue;
+      color: #fff;
+      transform: translateY(-2px);
+      outline: 2px solid $c-darkest-blue;
+    }
+  }
+}

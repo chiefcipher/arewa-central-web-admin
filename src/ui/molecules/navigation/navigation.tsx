@@ -7,7 +7,7 @@ export function Navigation(): JSX.Element {
   const profileName = "John Doe";
   return (
     <nav className={styles.nav}>
-      <Link to={Pages.account} className={styles.profile}>
+      <Link to={Pages.profile} className={styles.profile}>
         <img src={SampleProfileImg} alt={profileName} />
         <h3>{profileName}</h3>
       </Link>

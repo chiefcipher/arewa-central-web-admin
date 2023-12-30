@@ -79,13 +79,13 @@ export function Sidebar(): JSX.Element {
       <h3>Actions</h3>
       <div className={styles.menu}>
         <NavLink
-          to={Pages.settings}
+          to={Pages.profile}
           className={({ isActive }) =>
             isActive ? styles.activeNavLink : undefined
           }
         >
           <Icon icon="ri:admin-line" />
-          <span>Settings</span>
+          <span>Profile</span>
         </NavLink>
         <NavLink
           to={Pages.logout}

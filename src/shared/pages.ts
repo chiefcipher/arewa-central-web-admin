@@ -3,10 +3,10 @@ export const Pages = {
   product: "product",
   message: "message",
   order: "order",
-  account: "account",
+  // account: "account",
   logout: "logout",
   login: "login",
-  settings: "settings",
+  profile: "profile",
   forgot_password: "forgot-password",
 };
 
